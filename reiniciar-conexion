@@ -1,0 +1,15 @@
+#Reinicio automatico conexion con WispHub.net
+#Soporte a wisphub@gmail.com
+#Por default se reinicia cada 6 Horas, pueden cambiar el tiempo en el parametro interval
+#Ingregar a New Terminal, luego copiar y pegar el siguiente codigo.
+/system scheduler
+add comment="Reiniciar Conexion WispHub" interval=6h name=\
+    "Reiniciar Conexion WispHub" on-event="/interface set wisphub-vpn disabled\
+    =yes\r\
+    \n/interface ethernet set wisphub-vpn disabled=yes\r\
+    \n:log info message=\"Se Deshabilita wisphub-vpn\";\r\
+    \n:delay 4s\r\
+    \n/interface set wisphub-vpn disabled=no\r\
+    \n:log info message=\"Se Habilita wisphub-vpn\";" policy=\
+    ftp,reboot,read,write,policy,test,password,sniff,sensitive start-date=\
+    nov/21/1970 start-time=04:00:00
