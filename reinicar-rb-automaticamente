@@ -3,6 +3,4 @@
 #Abrir la terminal del RB copiar y pegar el siguiente codigo.
 #Wisphub.net
 /system scheduler
-add interval=1d name="Reinicio 5 AM" on-event="/system reboot" policy=\
-    ftp,reboot,read,write,policy,test,password,sniff,sensitive start-date=\
-    oct/11/1970 start-time=05:00:00
+add interval=1d name="Reinicio 5 AM" on-event="/system reboot" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive start-date=oct/11/1970 start-time=05:00:00
